@@ -29,6 +29,7 @@ function percorrer(){
 };
 function estilizar(){
     
+    
 }
 menu();
 percorrer();
