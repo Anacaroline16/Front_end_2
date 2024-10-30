@@ -28,8 +28,10 @@ function percorrer(){
     })
 };
 function estilizar(){
+    ancora.style.color = 'blue';
+    nav.style.fontsize = 'arial';
     
-    
-}
+};
 menu();
 percorrer();
+estilizar();
