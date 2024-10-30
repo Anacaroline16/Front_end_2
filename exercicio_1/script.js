@@ -29,7 +29,7 @@ function percorrer(){
 };
 function estilizar(){
     ancora.style.color = 'blue';
-    nav.style.fontsize = 'arial';
+    nav.style.fontSize = 'arial';
     
 };
 menu();
