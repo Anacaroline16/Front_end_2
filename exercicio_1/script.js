@@ -28,10 +28,19 @@ function percorrer(){
     })
 };
 function estilizar(){
-    ancora.style.color = 'blue';
-    nav.style.fontSize = 'arial';
+    const header = document.querySelector('header');
+    const ul = document.querySelector('ul');
+    header.style.backgroundColor = '#071D41';
+    header.style.fontFamily = 'Arial';
+    ul.style.display = 'flex';
+    ul.style.flexDirection = 'row';
+    ul.style.justifyContent = 'center';
+    ul.style.alignItems = 'center';
+    ul.style.height = '40px';
+    ul.style.gap = '20px';
+    ul.style.listStyleType = 'none';
     
-};
+}
 menu();
 percorrer();
 estilizar();
