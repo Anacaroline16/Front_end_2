@@ -5,7 +5,7 @@ export default function Header (){
         <header>
             <nav>
                 <ul >
-                <li className={style.li}><Link href='/' > Home</Link></li>
+                    <li className={style.li}><Link href='/' > Home</Link></li>
                     <li className={style.li}><Link href='/sobre' > Sobre</Link></li>
                     <li className={style.li}><Link href='/contato' > Contato</Link></li>
                 </ul>
