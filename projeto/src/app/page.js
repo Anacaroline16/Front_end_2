@@ -11,6 +11,7 @@ export default function Home() {
         <p>Autor {nome}</p>
         <Image  className= {styles.imagem} src='/images/depositphotos_190376900-stock-photo-overworked-young-woman-sitting-workplace.jpg' alt="Imagem de uma pessoa cansada na sexta-feira
         " width={600} height={400}/>
+        <p>Socorro</p>
     </div>
   );
 }
