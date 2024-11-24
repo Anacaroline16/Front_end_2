@@ -2,8 +2,8 @@ import style from "./sobre.module.css"
 const Sobre = ( ) => {
     return (
         <main> 
-            <h1>Sobre</h1>
-            <p className=  {style.paragrafo}>minha 2</p>
+            <h1 className={style.h1}>Sobre</h1>
+
         </main>
     )
 }

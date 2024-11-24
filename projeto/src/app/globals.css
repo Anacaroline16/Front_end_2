@@ -31,7 +31,7 @@ body {
   margin: 0;
 }
 h1{
-  color:blue ;
+  color:#141E63 ;
   font-weight:  bold;
   text-align: center;
   padding: 2rem;
@@ -46,4 +46,13 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+
+/*HEADER*/
+:root{
+  --cor-de-fundo-menu:#b9bcd7;
+  --cor-das-letras:white;
+  --cor-do-hover-letras:#325D79;
+  --cor-menu-menor: rgba(24, 31, 99, 0.5);
 }

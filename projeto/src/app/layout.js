@@ -1,11 +1,11 @@
-// import localFont from "next/font/local";
+ // import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/componentes/Header";
 
 
 export const metadata = {
   title: "Minha primeira aplicação",
-  description: "Aplicação de front end 2",
+  description: "Menu Responsivo",
   charset: 'UTF-8',
   author: 'Ana Cordeiro',
   keywords: 'HTML, CSS, JavaScript, React, Next.js',
