@@ -1,10 +1,9 @@
 import style from "./contato.module.css"
-const Contato = ( ) => {
+export default function Contato( ) {
     return (
-        <main> 
+        <div> 
             <h1 className={style.h1}>Contato</h1>
 
-        </main>
+        </div>
     )
 }
-export default Contato;
