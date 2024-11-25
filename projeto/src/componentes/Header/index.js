@@ -13,9 +13,6 @@ export default function Header (){
         setShowMenu(!showMenu);
     }
     const definindo_telas = () => {
-        if(window.innerWidth > 1500 && !showMenu){
-            setShowMenu(true)
-        }
         if(window.innerWidth < 600 && showMenu){
             setShowMenu(false)
         }
