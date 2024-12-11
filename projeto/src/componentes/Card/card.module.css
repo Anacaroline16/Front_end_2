@@ -1,0 +1,9 @@
+.div{
+    border: 1px solid black;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(111, 93, 128);
+    justify-content: center ;
+} 
