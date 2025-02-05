@@ -1,0 +1,7 @@
+.tabela{
+    background-color: var(--cor-da-tabela);
+    border: 1px solid #070707;
+}
+.headTabela{
+    border: 1px solid #070707;
+}

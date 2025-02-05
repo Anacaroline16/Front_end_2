@@ -40,3 +40,10 @@ a {
     color-scheme: dark;
   }
 }
+/*root*/
+:root{
+  --cor-do-menu:#6d9cab;
+  --cor-das-letras: white;
+  --cor-da-tabela:#FFEEF2;
+  
+}

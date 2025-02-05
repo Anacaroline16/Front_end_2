@@ -11,6 +11,14 @@ export default function Header(){
                 <div className={style.divLogo}>
                     <Image className={style.imagemLogo} src='/imagens/CliniSys_transparent-.png' alt="Logo da pagina" width={100} height={70}/>
                 </div>
+                <nav className={style.nav}>
+                    <ul className={style.ul} >
+                            <li className={style.li}><Link className={style.link} href='/' > Home</Link></li>
+                            <li className={style.li}><Link className={style.link}  href='/medico' >Medicos</Link></li>
+                            <li className={style.li}><Link className={style.link} href='/#' > Paciente</Link></li>
+                            <li className={style.li}><Link className={style.link} href='/#' >Consultas</Link></li>
+                    </ul>
+                </nav>
             </div>
         </header>
     )
