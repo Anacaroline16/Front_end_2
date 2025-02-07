@@ -19,6 +19,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
+  background-color: var(--cor-das-paginas-fundo);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -45,5 +46,8 @@ a {
   --cor-do-menu:#6d9cab;
   --cor-das-letras: white;
   --cor-da-tabela:#FFEEF2;
+  --cor-da-thead:#994dc2;
+  --cor-das-paginas-fundo:#f4f4f9;
+  --cors-do-hover-tabelas:#a788b8;
   
 }

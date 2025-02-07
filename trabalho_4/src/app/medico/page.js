@@ -16,27 +16,35 @@ export default function medicos(){
         { idmedico: 10, nome: "Dra. Gabriela Souza", telefone: "(11)90000-0010", email: "gabriela@souza.com", especialidade: "Oftalmologia" }
         ]);
     return(
-        <table className={style.tabela}>
-            <thead >
-                <tr key="" >
-                    <td >id</td>
-                    <td>nome</td>
-                    <td>telefone</td>
-                    <td>e-mail</td>
-                    <td>especialidade</td>
-                </tr>   
-            </thead>
-            <tbody>
-                {medicos.map((medico) => (
-                        <tr key={medico.idmedico}>
-                            <td>{medico.idmedico}</td>
-                            <td>{medico.nome}</td>
-                            <td>{medico.telefone}</td>
-                            <td>{medico.email}</td>
-                            <td>{medico.especialidade}</td>
-                            </tr> 
-                ))}
-            </tbody>
-        </table>
+        <div className={style.container_pai}> 
+            <h1 className={style.h1_tab}>Lista de Médicos</h1>
+            <input type="text" 
+                placeholder='Digite o nome do médico'
+            />
+            <div className={style.container_tab}> 
+                <table className={style.tabela}>
+                    <thead>
+                        <tr  >
+                            <td className={style.tr_tab}>Id</td>
+                            <td className={style.tr_tab}>Nome</td>
+                            <td className={style.tr_tab}>Telefone</td>
+                            <td className={style.tr_tab}>E-mail</td>
+                            <td className={style.tr_tab}>Especialidade</td>
+                        </tr>   
+                    </thead>
+                    <tbody>
+                        {medicos.map((medico) => (
+                                <tr className={style.linhaHover} key={medico.idmedico}>
+                                    <td className={style.tabela_td}>{medico.idmedico}</td>
+                                    <td className={style.tabela_td}> {medico.nome}</td>
+                                    <td className={style.tabela_td}>{medico.telefone}</td>
+                                    <td className={style.tabela_td}>{medico.email}</td>
+                                    <td className={style.tabela_td}>{medico.especialidade}</td>
+                                    </tr> 
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     )
 }
