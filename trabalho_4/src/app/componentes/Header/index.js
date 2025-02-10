@@ -15,8 +15,8 @@ export default function Header(){
                     <ul className={style.ul} >
                             <li className={style.li}><Link className={style.link} href='/' > Home</Link></li>
                             <li className={style.li}><Link className={style.link}  href='/medico' >Medicos</Link></li>
-                            <li className={style.li}><Link className={style.link} href='/#' > Paciente</Link></li>
-                            <li className={style.li}><Link className={style.link} href='/#' >Consultas</Link></li>
+                            <li className={style.li}><Link className={style.link} href='/pacientes' > Paciente</Link></li>
+                            <li className={style.li}><Link className={style.link} href='/consultas' >Consultas</Link></li>
                     </ul>
                 </nav>
             </div>
