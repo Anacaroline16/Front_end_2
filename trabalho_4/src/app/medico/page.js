@@ -5,6 +5,7 @@ import {  useEffect, useState} from "react";
 export default function medicos(){
     const [medico, setMedicos] = useState([])
     const [busca, setBusca] = useState('');
+    const medicos_filtrados = medico.filter(medicos=>(medicos.nome.toLowerCase().startsWith(busca.toLowerCase())));
 
     const getMedicos = async() =>{
         try{
@@ -25,12 +26,12 @@ export default function medicos(){
        getMedicos();
     },[])
 
-     const medicos_filtrados = medicos.filter((medico) => medico.ToLowerCase().starWith(busca))
+     
     return(
         <div className={style.container_pai}> 
             <h1 className={style.h1_tab}>Lista de Médicos</h1>
             <input type="text" 
-                placeholder='Digite o nome do médico'
+                placeholder='Buscar por médico'
                 value={busca}
                 onChange={(ev) => setBusca(ev.target.value)}
             />
@@ -46,15 +47,18 @@ export default function medicos(){
                         </tr>   
                     </thead>
                     <tbody>
-                        {medico.map((medico) => (
-                                <tr className={style.linhaHover} key={medico.id}>
-                                    <td className={style.tabela_td}>{medico.id}</td>
-                                    <td className={style.tabela_td}> {medico.nome}</td>
-                                    <td className={style.tabela_td}>{medico.telefone}</td>
-                                    <td className={style.tabela_td}>{medico.email}</td>
-                                    <td className={style.tabela_td}>{medico.especialidade}</td>
-                                    </tr> 
+                        {(busca === '' ? medico:medicos_filtrados).map((medico) => (
+                            <tr className={style.linhaHover} key={medico.id}>
+                            <td className={style.tabela_td}>{medico.id}</td>
+                            <td className={style.tabela_td}> {medico.nome}</td>
+                            <td className={style.tabela_td}>{medico.telefone}</td>
+                            <td className={style.tabela_td}>{medico.email}</td>
+                            <td className={style.tabela_td}>{medico.especialidade}</td>
+                            </tr> 
                         ))}
+                        
+                        
+
                     </tbody>
                 </table>
             </div>

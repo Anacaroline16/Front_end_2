@@ -12,7 +12,7 @@
 .h1_tab{
     display:block;
     text-align: center;
-    margin: 1% 0px 3% 0px;
+    margin: 3% 0px 3% 0px;
 }
 .tabela{
      /* width: 50%; */
@@ -28,6 +28,7 @@
     text-align: center;
     border: 1px solid  #070707 ;
     background-color: var(--cor-da-thead);
+    color: var(--cor-das-letras);
 }
 
 .tabela_td{

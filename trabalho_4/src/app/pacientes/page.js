@@ -4,6 +4,8 @@ import {  useEffect, useState} from "react";
 
 export default function pacientes(){
     const [paciente, setPacientes] = useState([])
+    const [busca, setBusca] = useState('');
+    const pacientes_filtrados = paciente.filter(pacientes =>(pacientes.nome.toLowerCase().startsWith(busca.toLowerCase())));
     const getPacientes = async() =>{
         try{
             const response = await fetch ('https://api-clinica-2a.onrender.com/pacientes');
@@ -26,7 +28,9 @@ export default function pacientes(){
         <div className={style.container_pai}> 
             <h1 className={style.h1_tab}>Lista de Pacientes</h1>
             <input type="text" 
-                placeholder='Digite o nome do médico'
+                placeholder='Buscar o nome do paciente'
+                value={busca}
+                onChange={(ev) => setBusca(ev.target.value)}
             />
             <div className={style.container_tab}> 
                 <table className={style.tabela}>
@@ -40,7 +44,7 @@ export default function pacientes(){
                         </tr>   
                     </thead>
                     <tbody>
-                        {paciente.map((paciente) => (
+                        {(busca === '' ? paciente : pacientes_filtrados).map((paciente) =>(
                                 <tr className={style.linhaHover} key={paciente.id}>
                                     <td className={style.tabela_td}>{paciente.id}</td>
                                     <td className={style.tabela_td}> {paciente.nome}</td>

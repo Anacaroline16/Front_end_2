@@ -24,7 +24,7 @@ export default function consultas(){
     },[])
     return(
         <div className={style.container_pai}> 
-            <h1 className={style.h1_tab}>Lista de Pacientes</h1>
+            <h1 className={style.h1_tab}> Consultas</h1>
             <input type="text" 
                 placeholder='Digite o nome do médico'
             />

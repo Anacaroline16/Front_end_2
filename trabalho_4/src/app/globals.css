@@ -45,9 +45,12 @@ a {
 :root{
   --cor-do-menu:#6d9cab;
   --cor-das-letras: white;
-  --cor-da-tabela:#e3ebef;
-  --cor-da-thead:#5a8591;
+  --cor-da-tabela:#dfe7ec;
+  --cor-da-thead:#4a6fa5;
   --cor-das-paginas-fundo:#f4f4f9;
-  --cors-do-hover-tabelas:#b8d1d8;
+  --cors-do-hover-tabelas:#9ac8eb;
   
 }
+/* #e3ebef */
+/* 5a8591 */
+/* b8d1d8 */
