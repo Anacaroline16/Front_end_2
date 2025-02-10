@@ -38,7 +38,8 @@
 }
 .linhaHover:hover{
     background-color: var(--cors-do-hover-tabelas);
+    border: none;
 }
-    
+
     
 
