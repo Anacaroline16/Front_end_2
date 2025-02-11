@@ -2,13 +2,14 @@
 import style from './consultas.module.css';
 import {  useEffect, useState} from "react";
 
-export default function consultas(){
+export default function Consultas(){
     const [consulta, setonsulta] = useState([]);
     const [buscaMedico, setBuscaMedico] = useState([]);
     const [buscaPaciente, setBuscaPaciente] = useState([]);
 
-    const medicos_filtrados_consultas = medico.filter(medicos=>(medicos.medico.toLowerCase().startsWith(buscaMedico.toLowerCase())));
-    const pacientes_filtrados_consultas = paciente.filter(pacientes =>(pacientes.paciente.toLowerCase().startsWith(buscaPaciente.toLowerCase())));
+    const medicos_filtrados_consultas = buscaMedico.filter(medicos=>(medicos.medico.toLowerCase().startsWith(buscaMedico.toLowerCase())));
+
+    const pacientes_filtrados_consultas = buscaPaciente.filter(pacientes =>(pacientes.paciente.toLowerCase().startsWith(buscaPaciente.toLowerCase())));
 
 
     const getConsulta = async() =>{
