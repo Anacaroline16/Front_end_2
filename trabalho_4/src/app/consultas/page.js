@@ -7,8 +7,8 @@ export default function consultas(){
     const [buscaMedico, setBuscaMedico] = useState([]);
     const [buscaPaciente, setBuscaPaciente] = useState([]);
 
-    const medicos_filtrados_consultas = medico.filter(medicos=>(medicos.nome.toLowerCase().startsWith(buscaMedico.toLowerCase())));
-    const pacientes_filtrados_consultas = paciente.filter(pacientes =>(pacientes.nome.toLowerCase().startsWith(buscaPaciente.toLowerCase())));
+    const medicos_filtrados_consultas = medico.filter(medicos=>(medicos.medico.toLowerCase().startsWith(buscaMedico.toLowerCase())));
+    const pacientes_filtrados_consultas = paciente.filter(pacientes =>(pacientes.paciente.toLowerCase().startsWith(buscaPaciente.toLowerCase())));
 
 
     const getConsulta = async() =>{
