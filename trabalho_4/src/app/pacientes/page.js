@@ -21,6 +21,7 @@ export default function pacientes(){
 
 
     }
+
     useEffect(()=>{
        getPacientes();
     },[])
@@ -56,6 +57,7 @@ export default function pacientes(){
                         ))}
                     </tbody>
                 </table>
+                {pacientes_filtrados && <p>sem resultado </p>}
             </div>
         </div>
     )
