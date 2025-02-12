@@ -2,7 +2,7 @@
 import style from './medico.module.css';
 import {  useEffect, useState} from "react";
 
-export default function medicos(){
+export default function Medicos(){
     // mudar para let
     const [medico, setMedicos] = useState([])
     const [busca, setBusca] = useState('');
@@ -12,13 +12,13 @@ export default function medicos(){
         try{
             const response = await fetch ('https://api-clinica-2a.onrender.com/medicos');
             if (!response.ok){
-                throw new error('Erro ao buscar dados:' +response.statusText);
+                throw new Error('Erro ao buscar dados:' +response.statusText);
             }
             const data = await response.json();
             setMedicos(data);
             console.log(data);
         }catch(error){
-            console.log('Ocorreu um erro', + error)
+            console.log('Ocorreu um erro', error)
         }
 
 
@@ -48,7 +48,8 @@ export default function medicos(){
                         </tr>   
                     </thead>
                     <tbody>
-                        {(busca === '' ? medico:medicos_filtrados).map((medico) => (
+                        {medicos_filtrados.length > 0 ? (
+                        medicos_filtrados.map((medico) => (
                             <tr className={style.linhaHover} key={medico.id}>
                             <td className={style.tabela_td}>{medico.id}</td>
                             <td className={style.tabela_td}> {medico.nome}</td>
@@ -56,7 +57,14 @@ export default function medicos(){
                             <td className={style.tabela_td}>{medico.email}</td>
                             <td className={style.tabela_td}>{medico.especialidade}</td>
                             </tr> 
-                        ))}
+                        ))
+                        ) : (
+                            <tr>
+                                <td colSpan="5" className={style.tabela_td} style={{ textAlign: 'center', fontWeight: 'bold' }}>
+                                            Não existe médico com o nome correspondente.
+                                        </td>
+                            </tr>
+                        )}
                         
                         
 

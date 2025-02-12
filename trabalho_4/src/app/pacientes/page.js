@@ -1,6 +1,7 @@
 'use client';
 import style from './paciente.module.css';
 import {  useEffect, useState} from "react";
+import { FaUserDoctor } from "react-icons/fa6";
 
 export default function pacientes(){
     const [paciente, setPacientes] = useState([])
@@ -10,13 +11,13 @@ export default function pacientes(){
         try{
             const response = await fetch ('https://api-clinica-2a.onrender.com/pacientes');
             if (!response.ok){
-                throw new error('Erro ao buscar dados:' +response.statusText);
+                throw new Error('Erro ao buscar dados:' +response.statusText);
             }
             const data = await response.json();
             setPacientes(data);
             console.log(data);
         }catch(error){
-            console.log('Ocorreu um erro', + error)
+            console.log('Ocorreu um erro', error)
         }
 
 
@@ -46,7 +47,8 @@ export default function pacientes(){
                         </tr>   
                     </thead>
                     <tbody>
-                        {(busca === '' ? paciente : pacientes_filtrados).map((paciente) =>(
+                        {pacientes_filtrados.length > 0 ?
+                        (pacientes_filtrados.map((paciente) =>(
                                 <tr className={style.linhaHover} key={paciente.id}>
                                     <td className={style.tabela_td}>{paciente.id}</td>
                                     <td className={style.tabela_td}> {paciente.nome}</td>
@@ -54,10 +56,17 @@ export default function pacientes(){
                                     <td className={style.tabela_td}>{paciente.email}</td>
                                     <td className={style.tabela_td}>{paciente.cpf}</td>
                                     </tr> 
-                        ))}
+                        ))
+                    ): (
+                        <tr>
+                            <td colSpan="5" className={style.tabela_td} style={{ textAlign: 'center', fontWeight: 'bold' }}>
+                                        Não existe paciente com o nome correspondente.
+                                    </td>
+                        </tr>
+                    )}
                     </tbody>
                 </table>
-                {pacientes_filtrados && <p>sem resultado </p>}
+                
             </div>
         </div>
     )

@@ -3,32 +3,28 @@ import style from './consultas.module.css';
 import {  useEffect, useState} from "react";
 
 export default function Consultas(){
-    const [consulta, setonsulta] = useState([]);
-    const [buscaMedico, setBuscaMedico] = useState([]);
-    const [buscaPaciente, setBuscaPaciente] = useState([]);
+    const [consulta, setConsulta] = useState([]);
+    const [buscaMedico, setBuscaMedico] = useState('');
+    const [buscaPaciente, setBuscaPaciente] = useState('');
 
-    const medicos_filtrados_consultas = consulta.filter(cs=>{
-        // console.log(cs.medico.toLowerCase())
-        return  cs.medico.toLowerCase().startsWith(buscaMedico.toLowerCase())
-        // console.log(retorno)
-        // return retorno
-    });
- 
+    // const medicos_filtrados_consultas = consulta.filter(medicos => medicos.medico.toLowerCase().startsWith(buscaMedico.toLowerCase()));
 
-    const pacientes_filtrados_consultas = buscaPaciente.filter(pacientes =>(pacientes.paciente.toLowerCase().startsWith(buscaPaciente.toLowerCase())));
+    // const pacientes_filtrados_consultas = consulta.filter(pacientes =>(pacientes.paciente.toLowerCase().startsWith(buscaPaciente.toLowerCase())));
+
+    const consultas_filtradas = consulta.filter( cs => cs.medico.toLowerCase().startsWith(buscaMedico.toLocaleLowerCase()) && cs.paciente.toLocaleLowerCase().startsWith(buscaPaciente.toLocaleLowerCase()));
 
 
     const getConsulta = async() =>{
         try{
             const response = await fetch ('https://api-clinica-2a.onrender.com/consultas');
             if (!response.ok){
-                throw new error('Erro ao buscar dados:' +response.statusText);
+                throw new Error('Erro ao buscar dados:' +response.statusText);
             }
             const data = await response.json();
-            setonsulta(data);
+            setConsulta(data);
             console.log(data);
         }catch(error){
-            console.log('Ocorreu um erro', + error)
+            console.log('Ocorreu um erro', error)
         }
 
 
@@ -61,33 +57,23 @@ export default function Consultas(){
                         </tr>   
                     </thead>
                     <tbody>
-                        {(buscaMedico === ''? consulta: medicos_filtrados_consultas).map((consulta) => (
-                                <tr className={style.linhaHover} key={consulta.id}>
-                                    <td className={style.tabela_td}>{consulta.id}</td>
-                                    <td className={style.tabela_td}> {consulta.especialidade}</td>
-                                    <td className={style.tabela_td}>{consulta.medico}</td>
-                                    <td className={style.tabela_td}>{consulta.paciente}</td>
-                                    <td className={style.tabela_td}>{consulta.tipo}</td>
+                            {consultas_filtradas.length > 0 ? (
+                                consultas_filtradas.map((consulta) => (
+                                    <tr className={style.linhaHover} key={consulta.id}>
+                                        <td className={style.tabela_td}>{consulta.id}</td>
+                                        <td className={style.tabela_td}>{consulta.especialidade}</td>
+                                        <td className={style.tabela_td}>{consulta.medico}</td>
+                                        <td className={style.tabela_td}>{consulta.paciente}</td>
+                                        <td className={style.tabela_td}>{consulta.tipo}</td>
                                     </tr> 
-                        ))}
-                         {/* {(busca === '' ? medico:medicos_filtrados).map((medico) => (
-                            <tr className={style.linhaHover} key={medico.id}>
-                            <td className={style.tabela_td}>{medico.id}</td>
-                            <td className={style.tabela_td}> {medico.nome}</td>
-                            <td className={style.tabela_td}>{medico.telefone}</td>
-                            <td className={style.tabela_td}>{medico.email}</td>
-                            <td className={style.tabela_td}>{medico.especialidade}</td>
-                            </tr> 
-                        ))} */}
-                        {consulta.map((consulta) => (
-                                <tr className={style.linhaHover} key={consulta.id}>
-                                    <td className={style.tabela_td}>{consulta.id}</td>
-                                    <td className={style.tabela_td}> {consulta.especialidade}</td>
-                                    <td className={style.tabela_td}>{consulta.medico}</td>
-                                    <td className={style.tabela_td}>{consulta.paciente}</td>
-                                    <td className={style.tabela_td}>{consulta.tipo}</td>
-                                    </tr> 
-                        ))}
+                                ))
+                            ) : (
+                                <tr>
+                                    <td colSpan="5" className={style.tabela_td} style={{ textAlign: 'center', fontWeight: 'bold' }}>
+                                        Não existe médico nem paciente com os nomes correspondentes.
+                                    </td>
+                                </tr>
+                            )}
                     </tbody>
                 </table>
             </div>

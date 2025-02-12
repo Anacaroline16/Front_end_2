@@ -2,6 +2,9 @@
 import Link from "next/link";
 import style from "./header.module.css";
 import Image from "next/image";
+// import { FaUserDoctor, FaHospitalUser, FaCalendarAlt, FaHome } from "react-icons/fa";
+
+
 
 
 export default function Header(){
@@ -13,10 +16,22 @@ export default function Header(){
                 </div>
                 <nav className={style.nav}>
                     <ul className={style.ul} >
-                            <li className={style.li}><Link className={style.link} href='/' > Home</Link></li>
-                            <li className={style.li}><Link className={style.link}  href='/medico' >Medicos</Link></li>
-                            <li className={style.li}><Link className={style.link} href='/pacientes' > Paciente</Link></li>
-                            <li className={style.li}><Link className={style.link} href='/consultas' >Consultas</Link></li>
+                            <li className={style.li}>
+                                <Link className={style.link} href='/' > 
+                                Home</Link>
+                            </li>
+                            <li className={style.li}>
+                                <Link className={style.link}  href='/medico'> 
+                                  Medicos </Link> 
+                            </li>
+                            <li className={style.li}>
+                                <Link className={style.link} href='/pacientes' > 
+                                Paciente</Link>
+                            </li>
+                            <li className={style.li}>
+                                <Link className={style.link} href='/consultas' >
+                                Consultas</Link>
+                            </li>
                     </ul>
                 </nav>
             </div>
@@ -24,3 +39,8 @@ export default function Header(){
     )
         
 }
+
+{/* <FaHome className={style.iconeHome}/>
+<FaUserDoctor className={style.iconeMedico} />
+<FaHospitalUser className={style.iconePaciente}/>
+<FaCalendarAlt className={style.iconeConsulta}/> */}
