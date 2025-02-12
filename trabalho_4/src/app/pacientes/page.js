@@ -27,7 +27,8 @@ export default function pacientes(){
     return(
         <div className={style.container_pai}> 
             <h1 className={style.h1_tab}>Lista de Pacientes</h1>
-            <input type="text" 
+            <input  type="text" 
+                className={style.input}
                 placeholder='Buscar o nome do paciente'
                 value={busca}
                 onChange={(ev) => setBusca(ev.target.value)}

@@ -3,6 +3,7 @@ import style from './medico.module.css';
 import {  useEffect, useState} from "react";
 
 export default function medicos(){
+    // mudar para let
     const [medico, setMedicos] = useState([])
     const [busca, setBusca] = useState('');
     const medicos_filtrados = medico.filter(medicos=>(medicos.nome.toLowerCase().startsWith(busca.toLowerCase())));

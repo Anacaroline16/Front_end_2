@@ -7,7 +7,13 @@ export default function Consultas(){
     const [buscaMedico, setBuscaMedico] = useState([]);
     const [buscaPaciente, setBuscaPaciente] = useState([]);
 
-    const medicos_filtrados_consultas = buscaMedico.filter(medicos=>(medicos.medico.toLowerCase().startsWith(buscaMedico.toLowerCase())));
+    const medicos_filtrados_consultas = consulta.filter(cs=>{
+        // console.log(cs.medico.toLowerCase())
+        return  cs.medico.toLowerCase().startsWith(buscaMedico.toLowerCase())
+        // console.log(retorno)
+        // return retorno
+    });
+ 
 
     const pacientes_filtrados_consultas = buscaPaciente.filter(pacientes =>(pacientes.paciente.toLowerCase().startsWith(buscaPaciente.toLowerCase())));
 
@@ -55,7 +61,7 @@ export default function Consultas(){
                         </tr>   
                     </thead>
                     <tbody>
-                        {medicos_filtrados_consultas.map((consulta) => (
+                        {(buscaMedico === ''? consulta: medicos_filtrados_consultas).map((consulta) => (
                                 <tr className={style.linhaHover} key={consulta.id}>
                                     <td className={style.tabela_td}>{consulta.id}</td>
                                     <td className={style.tabela_td}> {consulta.especialidade}</td>
@@ -64,7 +70,16 @@ export default function Consultas(){
                                     <td className={style.tabela_td}>{consulta.tipo}</td>
                                     </tr> 
                         ))}
-                        {pacientes_filtrados_consultas.map((consulta) => (
+                         {/* {(busca === '' ? medico:medicos_filtrados).map((medico) => (
+                            <tr className={style.linhaHover} key={medico.id}>
+                            <td className={style.tabela_td}>{medico.id}</td>
+                            <td className={style.tabela_td}> {medico.nome}</td>
+                            <td className={style.tabela_td}>{medico.telefone}</td>
+                            <td className={style.tabela_td}>{medico.email}</td>
+                            <td className={style.tabela_td}>{medico.especialidade}</td>
+                            </tr> 
+                        ))} */}
+                        {consulta.map((consulta) => (
                                 <tr className={style.linhaHover} key={consulta.id}>
                                     <td className={style.tabela_td}>{consulta.id}</td>
                                     <td className={style.tabela_td}> {consulta.especialidade}</td>

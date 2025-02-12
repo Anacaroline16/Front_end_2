@@ -12,15 +12,15 @@
 .h1_tab{
     display:block;
     text-align: center;
-    margin: 3% 0px 3% 0px;
+    margin: 3% 0px 2% 0px;
 }
 .tabela{
-     /* width: 50%; */
+     width: 50%;
     justify-content: center; 
     background-color: var(--cor-da-tabela);
     border: 1px solid #070707;
     border-collapse:collapse;
-    margin: 50px;
+    margin: 30px;
 }
 
 .tr_tab{
@@ -29,6 +29,8 @@
     border: 1px solid  #070707 ;
     background-color: var(--cor-da-thead);
     color: var(--cor-das-letras);
+    width: 50px;
+    font-size: 1.1rem;
 }
 
 .tabela_td{
@@ -36,11 +38,26 @@
     padding: 8px;
     text-align: center;
     color: #070707;
+    font-size: 1rem;
+    
 }
 .linhaHover:hover{
     background-color: var(--cors-do-hover-tabelas);
     border: none;
 }
-
+.input{
+    display: flex;
+    margin: 0 auto;
+    padding: 2px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
     
+    
+}
+.input::placeholder{
+    color: gray;
+    margin: 0 auto;
+    
+}
 
