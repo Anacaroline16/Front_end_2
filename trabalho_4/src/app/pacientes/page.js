@@ -1,7 +1,7 @@
 'use client';
 import style from './paciente.module.css';
 import {  useEffect, useState} from "react";
-import { FaUserDoctor } from "react-icons/fa6";
+// import { FaUserDoctor } from "react-icons/fa6";
 
 export default function pacientes(){
     const [paciente, setPacientes] = useState([])

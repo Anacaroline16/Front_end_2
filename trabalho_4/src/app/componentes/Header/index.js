@@ -17,20 +17,39 @@ export default function Header(){
                 <nav className={style.nav}>
                     <ul className={style.ul} >
                             <li className={style.li}>
-                                <Link className={style.link} href='/' > 
+                                <Link className={style.link} href='/#' > 
                                 Home</Link>
                             </li>
                             <li className={style.li}>
-                                <Link className={style.link}  href='/medico'> 
+                                <Link className={style.link}  href='#'> 
                                   Medicos </Link> 
+                                <ul>
+                                    <li><Link href="/medico"> Listar</Link></li>
+                                    <li><Link href="#"> Adicionar</Link></li>
+                                    <li><Link href="#"> Editar</Link></li>
+                                    <li><Link href="#"> Excluir</Link></li>
+                                </ul>  
                             </li>
+                            
                             <li className={style.li}>
-                                <Link className={style.link} href='/pacientes' > 
+                                <Link className={style.link} href='#' > 
                                 Paciente</Link>
+                                <ul>
+                                    <li><Link href="/pacientes"> Listar</Link></li>
+                                    <li><Link href="#"> Adicionar</Link></li>
+                                    <li><Link href="#"> Editar</Link></li>
+                                    <li><Link href="#"> Excluir</Link></li>
+                                </ul> 
                             </li>
                             <li className={style.li}>
-                                <Link className={style.link} href='/consultas' >
+                                <Link className={style.link} href='#' >
                                 Consultas</Link>
+                                <ul>
+                                    <li><Link href="/consultas"> Listar</Link></li>
+                                    <li><Link href="#"> Adicionar</Link></li>
+                                    <li><Link href="#"> Editar</Link></li>
+                                    <li><Link href="#"> Excluir</Link></li>
+                                </ul> 
                             </li>
                     </ul>
                 </nav>

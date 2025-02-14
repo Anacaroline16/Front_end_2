@@ -1,5 +1,5 @@
 'use client';
-import style from './consultas.module.css';
+import style from '../pacientes/paciente.module.css';
 import {  useEffect, useState} from "react";
 
 export default function Consultas(){
@@ -36,11 +36,13 @@ export default function Consultas(){
         <div className={style.container_pai}> 
             <h1 className={style.h1_tab}> Consultas</h1>
             <input type="text" 
+                className={style.input}
                 placeholder='Buscar por médico'
                 value={buscaMedico}
                 onChange={(ev) => setBuscaMedico(ev.target.value)}
             />
             <input type="text" 
+                className={style.input}
                 placeholder='Buscar o nome do paciente'
                 value={buscaPaciente}
                 onChange={(ev) => setBuscaPaciente(ev.target.value)}
@@ -60,7 +62,7 @@ export default function Consultas(){
                             {consultas_filtradas.length > 0 ? (
                                 consultas_filtradas.map((consulta) => (
                                     <tr className={style.linhaHover} key={consulta.id}>
-                                        <td className={style.tabela_td}>{consulta.id}</td>
+                                        <td className={style.tabela_td} >{consulta.id}</td>
                                         <td className={style.tabela_td}>{consulta.especialidade}</td>
                                         <td className={style.tabela_td}>{consulta.medico}</td>
                                         <td className={style.tabela_td}>{consulta.paciente}</td>

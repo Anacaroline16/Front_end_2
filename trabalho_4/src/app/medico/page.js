@@ -1,5 +1,5 @@
 'use client';
-import style from './medico.module.css';
+import style from '../pacientes/paciente.module.css';
 import {  useEffect, useState} from "react";
 
 export default function Medicos(){
@@ -32,6 +32,7 @@ export default function Medicos(){
         <div className={style.container_pai}> 
             <h1 className={style.h1_tab}>Lista de Médicos</h1>
             <input type="text" 
+                className={style.input}
                 placeholder='Buscar por médico'
                 value={busca}
                 onChange={(ev) => setBusca(ev.target.value)}
