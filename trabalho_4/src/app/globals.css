@@ -44,11 +44,12 @@ a {
 /*root*/
 :root{
   --cor-do-menu:#6d9cab;
-  --cor-das-letras: white;
+  --cor-letras-menu:#f4f4f9;
+  --cor-das-letras: #333333;
   --cor-da-tabela:#dfe7ec;
-  --cor-da-thead:#4a6fa5;
+  --cor-da-thead:#6d9cab;
   --cor-das-paginas-fundo:#f4f4f9;
-  --cors-do-hover-tabelas:#9ac8eb;
+  --cors-do-hover-tabelas-e-subMenu:#587e8b;
   
 }
 /* #e3ebef */

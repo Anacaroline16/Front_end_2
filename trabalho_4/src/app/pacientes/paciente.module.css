@@ -27,9 +27,6 @@
     margin: 30px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     overflow-x: auto;
-    border: 2px solid black;
-    border-radius: 100px;
-    
     
 
 }
@@ -53,7 +50,7 @@
     
 }
 .linhaHover:hover{
-    background-color: var(--cors-do-hover-tabelas);
+    background-color: var(--cors-do-hover-tabelas-e-subMenu);
     border: none;
 }
 .input{
