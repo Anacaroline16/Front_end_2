@@ -53,7 +53,7 @@
     background-color: var(--cors-do-hover-tabelas-e-subMenu);
     border: none;
 }
-.input{
+.botaoPesquisa button , .botaoPesquisa input {
     display: flex;
     margin: 0 auto;
     padding: 2px;
@@ -63,6 +63,13 @@
     height: 1.5rem;
     
     
+}
+.botaoPesquisa button {
+    background-color: #969191;
+    height: 30px;
+}
+.botao{
+    text-align: center;
 }
 .input::placeholder{
     color: gray;

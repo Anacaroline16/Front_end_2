@@ -6,6 +6,7 @@ import {  useEffect, useState} from "react";
 export default function pacientes(){
     const [paciente, setPacientes] = useState([])
     const [busca, setBusca] = useState('');
+    const [button, setButton] = useState(false);
     const pacientes_filtrados = paciente.filter(pacientes =>(pacientes.nome.toLowerCase().startsWith(busca.toLowerCase())));
     const getPacientes = async() =>{
         try{
@@ -22,6 +23,13 @@ export default function pacientes(){
 
 
     }
+    const verificar = () =>{
+        if (button) {
+            setButton(false)
+        } else {
+            setButton(true)
+        }
+    }
 
     useEffect(()=>{
        getPacientes();
@@ -29,12 +37,22 @@ export default function pacientes(){
     return(
         <div className={style.container_pai}> 
             <h1 className={style.h1_tab}>Lista de Pacientes</h1>
-            <input  type="text" 
-                className={style.input}
-                placeholder='Buscar o nome do paciente'
-                value={busca}
-                onChange={(ev) => setBusca(ev.target.value)}
+            <div className={style.botaoPesquisa}>
+                <button className={style.botao} onClick={() => setButton(verificar)}>
+                    Buscar o nome do paciente
+                </button>
+                {
+                    button && (
+                        <input  type="text" 
+                    className={style.input}
+                    placeholder='Buscar o nome do paciente'
+                    value={busca}
+                    onChange={(ev) => setBusca(ev.target.value)}
             />
+                    )
+                }
+            </div>
+            
             <div className={style.container_tab}> 
                 <table className={style.tabela}>
                     <thead>
