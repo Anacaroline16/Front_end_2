@@ -3,9 +3,6 @@ import Link from "next/link";
 import style from "./header.module.css";
 import Image from "next/image";
 import { useState} from "react";
-// import { FaUserDoctor, FaHospitalUser, FaCalendarAlt, FaHome } from "react-icons/fa";
-
-
 
 
 export default function Header(){
@@ -41,10 +38,13 @@ export default function Header(){
     
     return(
         <header className={style.header}>
+            <div className={style.divLogo}>
+            <Image className={style.imagemLogo} src='/imagens/CliniSys_transparent-.png' alt="Logo da pagina" width={100} height={70}/>
+            </div>
+            
             <div className={style.divMenu}>
-                <div className={style.divLogo}>
-                    <Image className={style.imagemLogo} src='/imagens/CliniSys_transparent-.png' alt="Logo da pagina" width={100} height={70}/>
-                </div>
+
+                
                 <nav className={style.nav} onMouseLeave={fecharSubMenu}>
                     <ul className={style.ul} >
                             <li className={style.li}>
@@ -52,7 +52,7 @@ export default function Header(){
                                 Home</Link>
                             </li>
                             <li className={style.li} onMouseOver={() => abrirSubMenu("medicos")}>
-                                <Link className={style.link}  href='#'>Medicos </Link> 
+                                <Link className={style.link}  href='#'>Médicos </Link> 
                                 {aberto === "medicos" && (
                                     <ul className={style.ulSubMenu}>
                                         {submenus.medicos.map((item, index) =>(
@@ -96,8 +96,3 @@ export default function Header(){
     )
         
 }
-
-{/* <FaHome className={style.iconeHome}/>
-<FaUserDoctor className={style.iconeMedico} />
-<FaHospitalUser className={style.iconePaciente}/>
-<FaCalendarAlt className={style.iconeConsulta}/> */}

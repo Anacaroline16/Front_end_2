@@ -51,6 +51,7 @@ export default function pacientes(){
             />
                     )
                 }
+                
             </div>
             
             <div className={style.container_tab}> 

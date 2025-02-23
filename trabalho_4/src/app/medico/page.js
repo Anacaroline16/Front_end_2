@@ -3,9 +3,10 @@ import style from '../pacientes/paciente.module.css';
 import {  useEffect, useState} from "react";
 
 export default function Medicos(){
-    // mudar para let
+    
     const [medico, setMedicos] = useState([])
     const [busca, setBusca] = useState('');
+    const [button, setButton] = useState(false);
     const medicos_filtrados = medico.filter(medicos=>(medicos.nome.toLowerCase().startsWith(busca.toLowerCase())));
 
     const getMedicos = async() =>{
@@ -23,6 +24,13 @@ export default function Medicos(){
 
 
     }
+    const verificar = () =>{
+        if (button) {
+            setButton(false)
+        } else {
+            setButton(true)
+        }
+    }
     useEffect(()=>{
        getMedicos();
     },[])
@@ -31,12 +39,22 @@ export default function Medicos(){
     return(
         <div className={style.container_pai}> 
             <h1 className={style.h1_tab}>Lista de Médicos</h1>
-            <input type="text" 
-                className={style.input}
-                placeholder='Buscar por médico'
-                value={busca}
-                onChange={(ev) => setBusca(ev.target.value)}
+            <div className={style.botaoPesquisa}>
+                <button className={style.botao} onClick={() => setButton(verificar)}>
+                    Buscar o nome do paciente
+                </button>
+                {
+                    button && (
+                        <input  type="text" 
+                    className={style.input}
+                    placeholder='Buscar o nome do paciente'
+                    value={busca}
+                    onChange={(ev) => setBusca(ev.target.value)}
             />
+                    )
+                }
+                
+            </div>
             <div className={style.container_tab}> 
                 <table className={style.tabela}>
                     <thead>

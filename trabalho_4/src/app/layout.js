@@ -1,5 +1,8 @@
+
 import "./globals.css";
 import Header from "@/app/componentes/Header";
+import Image from "next/image";
+import Link from "next/link";
 
 
 export const metadata = {
@@ -16,6 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="pt-br">
       <body>
         <Header/>
+        <Link rel="icon" type="image/png" href="/imagens/CliniSys_transparent-.ico"></Link>
         {children}
       </body>
     </html>
