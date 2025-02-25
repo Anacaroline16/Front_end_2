@@ -28,8 +28,15 @@
     overflow-x: auto;
     overflow-y: auto;
     
+    
 
 }
+/* .tabela td, .tabela_th{
+    padding: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+} */
 
 .tr_tab{
     padding: 8px;
@@ -96,18 +103,7 @@
 .input:focus{
     border-color: #335a85;
 }
-/* .botaoPesquisa button {
-    background-color: #969191;
-    height: 30px;
-}
-.botao{
-    text-align: center;
-}
-.input::placeholder{
-    color: gray;
-    margin: 0 auto;
-    
-} */
+
 
 @media (max-width: 360px) {
     .container_pai {
