@@ -55,7 +55,7 @@ export default function Medicos(){
                 }
                 
             </div>
-            <div className={style.container_tab}> 
+            <div className={style.container_tab} style={{overflowY: 'auto', maxWidth:'100%'}}> 
                 <table className={style.tabela}>
                     <thead>
                         <tr  >
