@@ -25,6 +25,7 @@
     margin: 30px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     overflow-x: auto;
+    overflow-y: auto;
     
 
 }
@@ -127,8 +128,10 @@
         font-size: 0.8rem;
         margin: 5px 0;
         box-shadow: none; 
-        overflow: scroll;
+        overflow-y: auto;
+        
     }
+    
 
     .tr_tab, .tabela_td {
         font-size: 0.7rem;
