@@ -126,7 +126,8 @@
         width: 100%;
         font-size: 0.8rem;
         margin: 5px 0;
-        box-shadow: none;
+        box-shadow: none; 
+        overflow: scroll;
     }
 
     .tr_tab, .tabela_td {

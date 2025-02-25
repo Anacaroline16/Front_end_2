@@ -46,13 +46,13 @@ export default function Consultas(){
             
             <div className={style.botaoPesquisa}>
                 <button className={style.botao} onClick={toggleBuscaMedico}>
-                    Buscar o nome do medico
+                    Buscar o nome do médico
                 </button>
                 {
                     buttonMedico && (
                         <input  type="text" 
                     className={style.input}
-                    placeholder='Buscar o nome do medico'
+                    placeholder='Buscar o nome do médico'
                     value={buscaMedico}
                     onChange={(ev) => setBuscaMedico(ev.target.value)}
             />

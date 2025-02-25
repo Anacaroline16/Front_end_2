@@ -41,13 +41,13 @@ export default function Medicos(){
             <h1 className={style.h1_tab}>Lista de Médicos</h1>
             <div className={style.botaoPesquisa}>
                 <button className={style.botao} onClick={() => setButton(verificar)}>
-                    Buscar o nome do paciente
+                    Buscar o nome do médico
                 </button>
                 {
                     button && (
                         <input  type="text" 
                     className={style.input}
-                    placeholder='Buscar o nome do paciente'
+                    placeholder='Buscar o nome do médico'
                     value={busca}
                     onChange={(ev) => setBusca(ev.target.value)}
             />
